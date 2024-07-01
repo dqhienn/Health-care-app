@@ -14,10 +14,11 @@ public:
 // Function to display the menu
 void showMenu(MenuItem menu[], int size) {
     cout << "Suggested Menu for the Week:" << endl;
-    cout << "-----------------------------" << endl;
+    cout << "---------------" << endl;
     for (int i = 0; i < size; ++i) {
         cout << menu[i].dayOfWeek << ": " << menu[i].dish << endl;
     }
+    cout << "------------------------------" << endl;
 }
 
 // Function to get user's choice to change the dish
@@ -111,10 +112,10 @@ void suggestMenu(float BMI) {
         }
         // Show the updated menu
         if (changedMenu) {
-            cout << "-----------------------------" << endl;
+                cout << "------------------------------" << endl;
             showMenu(menu[menuIndex], 7);
         }
     } else {
-        cout << "Okay! Have a nice day." << endl;
+        cout << endl;
     }
 }

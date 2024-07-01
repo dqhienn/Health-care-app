@@ -3,7 +3,7 @@
 #include <thread>
 #include <chrono>
 #include <random>
-#include <algorithm> // for std::transform
+#include <algorithm> // for transform
 using namespace std;
 
 class workoutRoutine {
@@ -23,14 +23,14 @@ void countdown(int duration, int rest) {
         }
         cout << message << endl;
     };
-
+    displayCountdown(duration, "");
     displayCountdown(rest, "Take a rest...");
 }
 
 // Function to print a HIIT routine
 void showHIITRoutines(workoutRoutine HIIT_Routines[], int size) {
     cout << "Here is your HIIT routine:" << endl;
-    cout << "-----------------" << endl;
+    cout << "---------------" << endl;
     for (int i = 0; i < size; ++i) {
         cout << HIIT_Routines[i].exerciseName << " - " 
              << "Workout: " << HIIT_Routines[i].duration << "s | " 
@@ -112,8 +112,8 @@ void suggestWorkout() {
     int routineIndex = dis(gen);
 
     showHIITRoutines(HIIT_Routines[routineIndex], 10);
-    int choice = processUserInput();
     
+    int choice = processUserInput();
     if (choice == -1) {
         cout << "Starting workout..." << endl;
     } else if (choice == 4 || choice == 0) {
